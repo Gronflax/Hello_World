@@ -1,0 +1,83 @@
+// My first free hand project which I'm writing using code I've learnt from Codecademy. Though so far they haven't had me add the namespace std yet but it seems more efficient to include it. 
+// Text Adventure.cpp : 
+/* A text adventure with 3 possible outcomes and several different eventualities*/
+#include <iostream>
+
+int main()
+{
+    using namespace std;
+
+    int option_1 = 0, option_2 = 0, option_3 = 0;  // setting my options up as integers
+
+    cout << "Welcome to the The Lone Wanderer\n\n"; // Title (throughly imaginative)
+    cout << "You awake to find yourself at the front entrance to a large old looking house! "; // Breif intro
+    cout << "You climb to your feet and realise that all your possessions have been taken.\n\n"; 
+
+    while (option_1 == 0) {   //While loop for practice, I tried to incorporate code to prevent the use of letters but couldn't figure it out. From my own knowledge and I didn't want to google a 
+                              //solution that I hadn't learned about in the classes I had done so far. However at least it only works to correct for wrong numbers put in. 
+        cout << "Select a random number out of 1, 2, or 3:";  // random selection, no answer is known until a option is picked. 
+        cin >> option_1;
+        
+        if (option_1 == 1) { //simple if statements to give three options or at least the illusion of three options. 
+            cout << "You bravely venture inside the house!\n\n";
+        }
+        else if (option_1 == 2) {
+            cout << "You are scared of the dark outside so quickly scurry inside!\n\n";
+        }
+        else if (option_1 == 3) {
+            cout << "You think you hear someone inside the house and you decide to investigate!?!\n\n";
+        }
+        else {
+            cout << "You have not entered a valid number?\n\n";
+            option_1 = 0;   // resets the option_1 to 0 to keep the code looping until the right number is picked.
+        }
+
+    }
+
+    cout << "Once inside the door way you realise the house is really ";
+    cout << "creepy inside, so creepy infact that you get goose bumps ";
+    cout << "all up your arms and the back of you neck.\n\n";  // random prattle
+
+    cout << "Something is behind you, you can feel it there, ";  // more prattle
+    cout << "feel it breathing on the back of your head, ";
+    cout << "you decide to run. Which way do you go though. \n";
+    cout << "1) Upstairs, 2) The door on your right, 3) The door on your left\n"; //Three more options. this time the options are given in advance, and are formatted differently to the earlier option. 
+
+    while (option_2 != 1) {   //another while loop to for the player to go upstairs. 
+        cout << "Make your choice quickly:\n";
+        cin >> option_2;
+
+        cout << "You run\n\n";
+
+        if (option_2 != 1) {
+            cout << "You find yourself back in the room, you run again!\n";
+            cout << "Same choices try harder this time\n";
+            cin >> option_2;
+            cout << "You run\n\n";
+        }
+    }
+
+    cout << "You run upstairs and start throwing open doors and run into rooms, you find that the rooms seems to always lead to more rooms.";
+    cout << "It doesn't seem to matter how far your run. Eventually tired out you pause and listen behind a door. You hear................";
+    cout << "nothing.\n\n";   // hey look I found more prattle
+
+    cout << "What do you do now?\n";
+    cout << "1) Run downstairs and out\n2) Jump out a window into the nearest trees\n3)Stay hiding for now";  // three more options this time formatted a further manner. 
+    cin >> option_3;
+
+    if (option_3 == 1) {  //no while loop this time. 
+        cout << "You run as quickly as you can. Straight for the door, but you never make it. You are never heard from again.\n\n";
+    }
+    else if (option_3 == 2) {
+        cout << "You run to the nearest window throw it wide and leap to the nearest tree. You leave, a little scratched and scared, of what you'll never know.\n\n";
+    }
+    else if (option_3 == 3){
+        cout << "You are never heard from again, no one knows what happened, and few even care!\n\n";
+    }
+    else {    // punishment for not selecting an option presented to you.
+        cout << "Why couldn't you just pick a helpful option. The creature comes, it finds you behind the door. It drags you while you try to claw away from it, your finger nails breaking and bleeding and you scratch at the wooden flooring. Into it's kitchen you are pulled. then peice by peice while you watch, you are added to the pot hanging over the flames.\n\n";
+    }
+
+    return 0;   //I suppose considering I've only been learning this week, this isn't to bad hopfully. 
+}
+

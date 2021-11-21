@@ -1,0 +1,35 @@
+//Gronflax
+
+#include <iostream> // these three are required libs for this program 
+#include <vector>
+#include <string>
+
+int main() {
+
+  std::string s_trans = "turpentine and turtles";          //set up of variables
+  std::vector<char> whaleish = {'a', 'e', 'i', 'o', 'u'};
+  std::vector<char> result;
+
+  for (int i = 0; i < s_trans.size(); i++) {             // for loop
+
+    for (int i2 = 0; i2 < whaleish.size(); i2++) {       // nested for loop for testing the s_trans string against the whaleish vector
+      if (whaleish[i2] == s_trans[i]) {
+        if (s_trans[i] == 'e') {
+           result.push_back(s_trans[i]);
+           result.push_back(s_trans[i]);
+        } else if (s_trans[i] == 'u') {
+           result.push_back(s_trans[i]); 
+           result.push_back(s_trans[i]);
+        } else {
+           result.push_back(s_trans[i]);
+        }
+      }
+    }
+  }
+  
+  for (int i3 = 0; i3 < result.size(); i3++){        // simple output of the results vector. 
+    std::cout << result[i3];
+  }
+
+  std::cout << "\n";
+}
